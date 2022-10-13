@@ -4,17 +4,22 @@ class Button extends StatelessWidget {
     
 
   final String text;
+  final bool big;
 
  const Button({
     required this.text,
+    this.big = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return Expanded( 
+      flex: big ? 2 : 1,
+    child: ElevatedButton(
       child:  Text (text),
       onPressed: () {},
       
+     ),
     );
   }
 }
